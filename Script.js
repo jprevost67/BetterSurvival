@@ -142,6 +142,73 @@ var createBlock = function(id,name,texture,source,stackSize,isTool,addCreative) 
     }
 };
 
+var createTree = function(x,y,z,logId,leavesId){
+    this.x = x;
+    this.y = y;
+    this.z = z;
+    this.lg = logId;
+    this.ls = leavesId;
+    this.timer = 10000;
+    this.genTree = function(){
+        setTile(this.x,this.y,this.z,this.lg);
+        setTile(this.x,this.y+1,this.z,this.lg);
+        setTile(this.x,this.y+2,this.z,this.lg);
+        setTile(this.x,this.y+3,this.z,this.lg);
+        setTile(this.x+1,this.y+3,this.z,this.ls);
+        setTile(this.x-1,this.y+3,this.z,this.ls);
+        setTile(this.x,this.y+3,this.z+1,this.ls);
+        setTile(this.x,this.y+3,this.z-1,this.ls);
+        setTile(this.x+1,this.y+3,this.z+1,this.ls);
+        setTile(this.x+1,this.y+3,this.z-1,this.ls);
+        setTile(this.x-1,this.y+3,this.z+1,this.ls);
+        setTile(this.x-1,this.y+3,this.z-1,this.ls);
+        setTile(this.x+2,this.y+3,this.z,this.ls);
+        setTile(this.x-2,this.y+3,this.z,this.ls);
+        setTile(this.x,this.y+3,this.z+2,this.ls);
+        setTile(this.x,this.y+3,this.z-2,this.ls);
+        
+        setTile(this.x+2,this.y+3,this.z+1,this.ls);
+        setTile(this.x-2,this.y+3,this.z+1,this.ls);
+        setTile(this.x+2,this.y+3,this.z-1,this.ls);
+        setTile(this.x-2,this.y+3,this.z-1,this.ls);
+        setTile(this.x+2,this.y+3,this.z+2,this.ls);
+        setTile(this.x-2,this.y+3,this.z+2,this.ls);
+        setTile(this.x+2,this.y+3,this.z-2,this.ls);
+        setTile(this.x-2,this.y+3,this.z-2,this.ls);
+        
+        setTile(this.x+1,this.y+3,this.z+2,this.ls);
+        setTile(this.x+1,this.y+3,this.z-2,this.ls);
+        setTile(this.x-1,this.y+3,this.z+2,this.ls);
+        setTile(this.x-1,this.y+3,this.z-2,this.ls);
+        
+        setTile(this.x,this.y+4,this.z,this.lg);
+        setTile(this.x+1,this.y+4,this.z,this.ls);
+        setTile(this.x-1,this.y+4,this.z,this.ls);
+        setTile(this.x,this.y+4,this.z+1,this.ls);
+        setTile(this.x,this.y+4,this.z-1,this.ls);
+        setTile(this.x+1,this.y+4,this.z+1,this.ls);
+        setTile(this.x+1,this.y+4,this.z-1,this.ls);
+        setTile(this.x-1,this.y+4,this.z+1,this.ls);
+        setTile(this.x-1,this.y+4,this.z-1,this.ls);
+        setTile(this.x+2,this.y+4,this.z,this.ls);
+        setTile(this.x-2,this.y+4,this.z,this.ls);
+        setTile(this.x,this.y+4,this.z+2,this.ls);
+        setTile(this.x,this.y+4,this.z-2,this.ls);
+        
+        setTile(this.x,this.y+5,this.z,this.ls);
+        setTile(this.x+1,this.y+5,this.z,this.ls);
+        setTile(this.x-2,this.y+5,this.z,this.ls);
+        setTile(this.x,this.y+5,this.z+1,this.ls);
+        setTile(this.x,this.y+5,this.z-1,this.ls);
+    };
+    this.run = function(){
+        this.timer--;
+        if(this.timer == 0){
+            this.genTree();
+        }
+    };
+};
+
 var Random = function(numbersCanChoseFrom){
     var r = Math.floor(Math.random()*numbersCanChoseFrom);
     return r;
