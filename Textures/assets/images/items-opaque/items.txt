@@ -22,8 +22,11 @@ Iron Wrench - 466
 
 Concrete Bucket - 467
 
-Iron Nugget - 468
+Tin Ingot - 468
 
-Rock - 469
+Iron Nugget - 469
+Tin Nugget - 470
 
-Silk Strand - 470
+Rock - 471
+
+Silk Strand - 472
