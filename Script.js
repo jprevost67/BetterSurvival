@@ -78,6 +78,9 @@ var Blocks = {
     Machinery: {
         Gearbox: 227,
     },
+    Barrels: {
+        Normal: 228,
+    },
 };
 
 var createBlock = function(id,name,texture,source,isOpaque,render,destroy,explosion,light,addCreative,extraData) {
