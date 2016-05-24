@@ -138,7 +138,7 @@ var createBlock = function(id,name,texture,source,isOpaque,render,destroy,explos
     }
 };
 
-var createBlock = function(id,name,texture,source,stackSize,isTool,addCreative) {
+var createItem = function(id,name,texture,source,stackSize,isTool,addCreative) {
     ModPE.setItem(id,texture,source,name,stackSize);
     Item.setHandEquipped(id,isTool);
     if(addCreative == true){
@@ -216,4 +216,39 @@ var createTree = function(x,y,z,logId,leavesId){
 var Random = function(numbersCanChoseFrom){
     var r = Math.floor(Math.random()*numbersCanChoseFrom);
     return r;
+};
+
+var registerItems = function(){
+    var crushedCoal = new createItem(Items.Crushed.Coal,"Crushed Coal","crushed_coal",0,64,false,true);
+    var crushedIron = new createItem(Items.Crushed.Iron,"Crushed Iron","crushed_iron",0,64,false,true);
+    var crushedGold = new createItem(Items.Crushed.Gold,"Crushed Gold","crushed_gold",0,64,false,true);
+    
+    var knifeWood = new createItem(Items.Knives.Wood,"Wooden Knife","knife_wood",0,1,true,true);
+    var knifeStone = new createItem(Items.Knives.Stone,"Stone Knife","knife_stone",0,1,true,true);
+    var knifeIron = new createItem(Items.Knives.Iron,"Iron Knife","knife_iron",0,1,true,true);
+    var knifeGold = new createItem(Items.Knives.Gold,"Gold Knife","knife_gold",0,1,true,true);
+    var knifeDiamond = new createItem(Items.Knives.Diamond,"Diamond Knife","knife_diamond",0,1,true,true);
+    
+    var hammerWood = new createItem(Items.Hammers.Wood,"Wooden Hammer","hammer_wood",0,1,true,true);
+    var hammerStone = new createItem(Items.Hammers.Stone,"Stone Hammer","hammer_stone",0,1,true,true);
+    var hammerIron = new createItem(Items.Hammers.Iron,"Iron Hammer","hammer_iron",0,1,true,true);
+    var hammerGold = new createItem(Items.Hammers.Gold,"Gold Hammer","hammer_gold",0,1,true,true);
+    var hammerDiamond = new createItem(Items.Hammers.Diamond,"Diamond Hammer","hammer_diamond",0,1,true,true);
+    
+    var gearWood = new createItem(Items.Gears.Wood,"Wooden Gear","gear_wood",0,64,true,true);
+    var gearStone = new createItem(Items.Gears.Stone,"Stone Gear","gear_stone",0,64,true,true);
+    var gearIron = new createItem(Items.Gears.Iron,"Iron Gear","gear_iron",0,64,true,true);
+    
+    var wrench = new createItem(Items.Wrenches.Normal,"Wrench","wrench",0,1,true,true);
+    
+    var concreteBucket = new createItem(Items.Buckets.Concrete,"Concrete Bucket","bucket_Concrete",0,1,false,true);
+    
+    var ingotTin = new createItem(Items.Ingots.Tin,"Tin Ingot","ingot_tin",0,64,false,true);
+    
+    var nuggetIron = new createItem(Items.Nuggets.Iron,"Iron Nugget","nugget_iron",0,64,false,true);
+    var nuggetTin = new createItem(Items.Nuggets.Tin,"Tin Nugget","nugget_tin",0,64,false,true);
+    
+    var rock = new createItem(Items.Misc.Rock,"Rock","rock",0,64,false,true);
+    
+    var silkStrand = new createItem(Items.Misc.Silk_Strand,"Silk Strand","silk_strand",0,64,false,true);
 };
