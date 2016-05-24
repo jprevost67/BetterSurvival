@@ -1,11 +1,29 @@
-Wood Knife
-Stone Knife
-Iron Knife
-Gold Knife
-Diamond Knife
+Crushed Coal - 450
+Crushed Iron - 451
+Crushed Gold - 452
 
-Wood Hammer
-Stone Hammer
-Iron Hammer
-Gold Hammer
-Diamond Hammer
+Wood Knife - 453
+Stone Knife - 454
+Iron Knife - 455
+Gold Knife - 456
+Diamond Knife - 457
+
+Wood Hammer - 458
+Stone Hammer - 459
+Iron Hammer - 460
+Gold Hammer - 461
+Diamond Hammer - 462
+
+Wood Gear - 463
+Stone Gear - 464
+Iron Gear - 465
+
+Iron Wrench - 466
+
+Concrete Bucket - 467
+
+Iron Nugget - 468
+
+Rock - 469
+
+Silk Strand - 470
