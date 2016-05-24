@@ -1,1 +1,11 @@
+Wood Knife
+Stone Knife
+Iron Knife
+Gold Knife
+Diamond Knife
 
+Wood Hammer
+Stone Hammer
+Iron Hammer
+Gold Hammer
+Diamond Hammer
