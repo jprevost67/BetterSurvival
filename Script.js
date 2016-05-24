@@ -141,3 +141,8 @@ var createBlock = function(id,name,texture,source,stackSize,isTool,addCreative) 
         Player.addItemCreativeInv(id,1,0);
     }
 };
+
+var Random = function(numbersCanChoseFrom){
+    var r = Math.floor(Math.random()*numbersCanChoseFrom);
+    return r;
+};
