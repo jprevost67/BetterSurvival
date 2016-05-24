@@ -75,3 +75,48 @@ var Blocks = {
         Gearbox: 227,
     },
 };
+
+var createBlock = function(id,name,texture,source,isOpaque,render,destroy,explosion,light,addCreative,extraData) {
+    Block.defineBlock(id,name,texture,source,isOpaque,render);
+    Block.setDestroyTime(id,destroy);
+    Block.setExplosionResistance(id,explosion);
+    Block.setLightLevel(id,light);
+    if(addCreative == true){
+        if(extraData >= 0){
+            Player.addItemCreativeInv(id,1,0);
+        }
+        if(extraData >= 0){
+            Player.addItemCreativeInv(id,1,0);
+        }
+        if(extraData >= 0){
+            Player.addItemCreativeInv(id,1,0);
+        }
+        if(extraData >= 0){
+            Player.addItemCreativeInv(id,1,0);
+        }
+        if(extraData >= 0){
+            Player.addItemCreativeInv(id,1,0);
+        }
+        if(extraData >= 0){
+            Player.addItemCreativeInv(id,1,0);
+        }
+        if(extraData >= 0){
+            Player.addItemCreativeInv(id,1,0);
+        }
+        if(extraData >= 0){
+            Player.addItemCreativeInv(id,1,0);
+        }
+        if(extraData >= 0){
+            Player.addItemCreativeInv(id,1,0);
+        }
+        if(extraData >= 0){
+            Player.addItemCreativeInv(id,1,0);
+        }
+        if(extraData >= 0){
+            Player.addItemCreativeInv(id,1,0);
+        }
+        if(extraData >= 0){
+            Player.addItemCreativeInv(id,1,0);
+        }
+    }
+};
