@@ -80,6 +80,7 @@ var Blocks = {
     },
     Barrels: {
         Normal: 228,
+        Fill: 229,
     },
 };
 
