@@ -29,6 +29,13 @@ var Items = {
     Buckets: {
         Concrete: 467,
     },
+    Nuggets: {
+        Iron: 468,
+    },
+    Misc: {
+        Rock: 469,
+        Silk_Strand: 470,
+    },
 };
 var Blocks = {
     Logs: {
