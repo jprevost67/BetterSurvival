@@ -29,12 +29,16 @@ var Items = {
     Buckets: {
         Concrete: 467,
     },
+    Ingots: {
+        Tin: 468
+    },
     Nuggets: {
-        Iron: 468,
+        Iron: 469,
+        Tin: 470
     },
     Misc: {
-        Rock: 469,
-        Silk_Strand: 470,
+        Rock: 471,
+        Silk_Strand: 472,
     },
 };
 var Blocks = {
