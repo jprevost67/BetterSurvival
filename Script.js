@@ -256,3 +256,30 @@ var registerItems = function(){
     
     var silkStrand = new createItem(Items.Misc.Silk_Strand,"Silk Strand","silk_strand",0,64,false,true);
 };
+
+var registerBlocks = function() {
+    var appleLog = new createBlock(Blocks.Logs.Apple,"Apple Tree Log",[["log_apple",4],["log_apple",4],["log_apple",1],["log_apple",1],["log_apple",1],["log_apple",1]],5,0,0,0.5,1,0,true,0);
+    var orangeLog = new createBlock(Blocks.Logs.Orange,"Orange Tree Log",[["log_orange",4],["log_orange",4],["log_orange",1],["log_orange",1],["log_orange",1],["log_orange",1]],5,0,0,0.5,1,0,true,0);
+    
+    var appleLeaves = new createBlock(Blocks.Leaves.Apple,"Apple Tree Leaves",[["leaves_apple",0]],1,0,0,0.1,0.5,0,true,0);
+    var orangeLeaves = new createBlock(Blocks.Leaves.Orange,"Orange Tree Leaves",[["leaves_orange",0]],1,0,0,0.1,0.5,0,true,0);
+    
+    var appleSapling = new createBlock(Blocks.Saplings.Apple,"Apple Tree Sapling",[["leaves_apple",0]],1,0,0,0.1,0.5,0,false,0);
+    Block.setShape(Blocks.Saplings.Apple,4/16,0,4/16,12/16,6/16,12/16);
+    var orangeSapling = new createBlock(Blocks.Saplings.Orange,"Orange Tree Sapling",[["leaves_orange",0]],1,0,0,0.1,0.5,0,false,0);
+    Block.setShape(Blocks.Saplings.Orange,4/16,0,4/16,12/16,6/16,12/16);
+    
+    var applePlanks = new createBlock(Blocks.Planks.Apple,"Apple Tree Planks",[["planks_apple",0]],1,0,0,0.5,1,0,true,0);
+    var orangePlanks = new createBlock(Blocks.Planks.Orange,"Orange Tree Planks",[["planks_orange",0]],1,0,0,0.5,1,0,true,0);
+    
+    var applePlanks = new createBlock(Blocks.Planks.Apple,"Apple Tree Planks",[["planks_apple",0]],1,0,0,0.5,1,0,true,0);
+    var orangePlanks = new createBlock(Blocks.Planks.Orange,"Orange Tree Planks",[["planks_orange",0]],1,0,0,0.5,1,0,true,0);
+    
+    
+    
+    
+    
+    
+    
+    
+};
