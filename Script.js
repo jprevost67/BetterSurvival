@@ -2,43 +2,44 @@ var Items = {
     Crushed: {
         Coal: 450,
         Iron: 451,
-        Gold: 452,
+        Tin: 452,
+        Gold: 453,
     },
     Knives: {
-        Wood: 453,
-        Stone: 454,
-        Iron: 455,
-        Gold: 456,
-        Diamond: 457,
+        Wood: 454,
+        Stone: 455,
+        Iron: 456,
+        Gold: 457,
+        Diamond: 458,
     },
     Hammers: {
-        Wood: 458,
-        Stone: 459,
-        Iron: 460,
-        Gold: 461,
-        Diamond: 462,
+        Wood: 459,
+        Stone: 460,
+        Iron: 461,
+        Gold: 462,
+        Diamond: 463,
     },
     Gears: {
-        Wood: 463,
-        Stone: 464,
-        Iron: 465,
+        Wood: 464,
+        Stone: 465,
+        Iron: 466,
     },
     Wrenches: {
-        Normal: 466,
+        Normal: 467,
     },
     Buckets: {
-        Concrete: 467,
+        Concrete: 468,
     },
     Ingots: {
-        Tin: 468
+        Tin: 469
     },
     Nuggets: {
-        Iron: 469,
-        Tin: 470
+        Iron: 470,
+        Tin: 471
     },
     Misc: {
-        Rock: 471,
-        Silk_Strand: 472,
+        Rock: 472,
+        Silk_Strand: 473,
     },
 };
 var Blocks = {
@@ -225,6 +226,7 @@ var Random = function(numbersCanChoseFrom){
 var registerItems = function(){
     var crushedCoal = new createItem(Items.Crushed.Coal,"Crushed Coal","crushed_coal",0,64,false,true);
     var crushedIron = new createItem(Items.Crushed.Iron,"Crushed Iron","crushed_iron",0,64,false,true);
+    var crushedTin = new createItem(Items.Crushed.Tin,"Crushed Tin","crushed_tin",0,64,false,true);
     var crushedGold = new createItem(Items.Crushed.Gold,"Crushed Gold","crushed_gold",0,64,false,true);
     
     var knifeWood = new createItem(Items.Knives.Wood,"Wooden Knife","knife_wood",0,1,true,true);
@@ -269,16 +271,25 @@ var registerBlocks = function() {
     var orangeSapling = new createBlock(Blocks.Saplings.Orange,"Orange Tree Sapling",[["leaves_orange",0]],1,0,0,0.1,0.5,0,false,0);
     Block.setShape(Blocks.Saplings.Orange,4/16,0,4/16,12/16,6/16,12/16);
     
-    var applePlanks = new createBlock(Blocks.Planks.Apple,"Apple Tree Planks",[["planks_apple",0]],1,0,0,0.5,1,0,true,0);
-    var orangePlanks = new createBlock(Blocks.Planks.Orange,"Orange Tree Planks",[["planks_orange",0]],1,0,0,0.5,1,0,true,0);
+    var applePlanks = new createBlock(Blocks.Planks.Apple,"Apple Tree Planks",[["planks_apple",0]],5,0,0,0.5,1,0,true,0);
+    var orangePlanks = new createBlock(Blocks.Planks.Orange,"Orange Tree Planks",[["planks_orange",0]],5,0,0,0.5,1,0,true,0);
     
-    var applePlanks = new createBlock(Blocks.Planks.Apple,"Apple Tree Planks",[["planks_apple",0]],1,0,0,0.5,1,0,true,0);
-    var orangePlanks = new createBlock(Blocks.Planks.Orange,"Orange Tree Planks",[["planks_orange",0]],1,0,0,0.5,1,0,true,0);
+    var appleSlabs = new createBlock(Blocks.Slabs.Apple,"Apple Tree Slabs",[["planks_apple",0]],5,0,0,0.5,1,0,true,0);
+    Block.setshape(Blocks.Slabs.Apple,0,0,0,1,0.5,1,0);
+    Block.setshape(Blocks.Slabs.Apple,0,0.5,0,1,1,1,1);
+    Block.setshape(Blocks.Slabs.Apple,0,0,0,1,1,1,2);
+    var orangeSlabs = new createBlock(Blocks.Slabs.Orange,"Orange Tree Slabs",[["planks_orange",0]],5,0,0,0.5,1,0,true,0);
+    Block.setshape(Blocks.Slabs.Orange,0,0,0,1,0.5,1,0);
+    Block.setshape(Blocks.Slabs.Orange,0,0.5,0,1,1,1,1);
+    Block.setshape(Blocks.Slabs.Orange,0,0,0,1,1,1,2);
     
+    var cobbleCompressedSingle = new createBlock(Blocks.Cobble_Compressed.Single,"Single Compressed Cobblestone",[["cobble_compressed_single",0]],2,0,0,1,1,0,true,0);
+    var cobbleCompressedDouble = new createBlock(Blocks.Cobble_Compressed.Double,"Double Compressed Cobblestone",[["cobble_compressed_double",0]],2,0,0,1,1,0,true,0);
+    var cobbleCompressedTriple = new createBlock(Blocks.Cobble_Compressed.Triple,"Triple Compressed Cobblestone",[["cobble_compressed_triple",0]],2,0,0,1,1,0,true,0);
+    var cobbleCompressedQuadruple = new createBlock(Blocks.Cobble_Compressed.Quadruple,"Quadruple Compressed Cobblestone",[["cobble_compressed_quadruple",0]],2,0,0,1,1,0,true,0);
     
-    
-    
-    
+    var cobbleCompressedSingle = new createBlock(Blocks.Cobble_Compressed.Single,"Single Compressed Cobblestone",[["concrete",0]],2,0,0,9999,9999,0,true,0);
+    var cobbleCompressedDouble = new createBlock(Blocks.Cobble_Compressed.Double,"Double Compressed Cobblestone",[["concrete",0]],2,0,0,1.5,2,0,true,0);
     
     
     
