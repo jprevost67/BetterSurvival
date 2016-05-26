@@ -286,9 +286,9 @@ var BarrelFunction = function(x,y,z) {
 var generateOre = function(id,minY,maxY,rarity){
     this.r = Math.floor(Math.random()*rarity);
     this.maxSpawn = 10000/rarity;
-    var rX = Math.floor(Math.random()*100000);
-    var rY = Math.floor((Math.random()*maxY)+minY);
-    var rZ = Math.floor(Math.random()*100000);
+    this.rX = Math.floor(Math.random()*100000);
+    this.rY = Math.floor((Math.random()*maxY)+minY);
+    this.rZ = Math.floor(Math.random()*100000);
     this.gen = function(){
         if(level.getTile(rX,rY,rZ) == 0){
             setTile(rX,rY,rZ,id);
@@ -316,6 +316,10 @@ var generateOre = function(id,minY,maxY,rarity){
         }
     };
     this.run = function(){
+        this.r = Math.floor(Math.random()*rarity);
+        this.rX = Math.floor(Math.random()*100000);
+        this.rY = Math.floor((Math.random()*maxY)+minY);
+        this.rZ = Math.floor(Math.random()*100000);
         if(this.r == 0 && this.maxSpawn > 0){
             this.maxSpawn--;
             this.gen();
