@@ -283,6 +283,46 @@ var BarrelFunction = function(x,y,z) {
     }
 };
 
+var generateOre = function(id,minY,maxY,rarity){
+    this.r = Math.floor(Math.random()*rarity);
+    this.maxSpawn = 10000/rarity;
+    var rX = Math.floor(Math.random()*100000);
+    var rY = Math.floor((Math.random()*maxY)+minY);
+    var rZ = Math.floor(Math.random()*100000);
+    this.gen = function(){
+        if(level.getTile(rX,rY,rZ) == 0){
+            setTile(rX,rY,rZ,id);
+            if(level.getTile(rX,rY+1,rZ) == 0){
+                setTile(rX,rY+1,rZ,id);
+            }
+            if(level.getTile(rX+1,rY,rZ) == 0){
+                setTile(rX+1,rY,rZ,id);
+            }
+            if(level.getTile(rX,rY,rZ+1) == 0){
+                setTile(rX,rY,rZ+1,id);
+            }
+            if(level.getTile(rX+1,rY,rZ+1) == 0){
+                setTile(rX+1,rY,rZ+1,id);
+            }
+            if(level.getTile(rX+1,rY+1,rZ) == 0){
+                setTile(rX+1,rY+1,rZ,id);
+            }
+            if(level.getTile(rX,rY+1,rZ+1) == 0){
+                setTile(rX,rY+1,rZ+1,id);
+            }
+            if(level.getTile(rX+1,rY+1,rZ+1) == 0){
+                setTile(rX+1,rY+1,rZ+1,id);
+            }
+        }
+    };
+    this.run = function(){
+        if(this.r == 0 && this.maxSpawn > 0){
+            this.maxSpawn--;
+            this.gen();
+        }
+    };
+}
+
 var registerItems = function(){
     var crushedCoal = new createItem(Items.Crushed.Coal,"Crushed Coal","crushed_coal",0,64,false,true);
     var crushedIron = new createItem(Items.Crushed.Iron,"Crushed Iron","crushed_iron",0,64,false,true);
@@ -362,3 +402,9 @@ var registerBlocks = function() {
 registerItems();
 registerBlocks();
 
+var appleTrees = [];
+var orangeTrees = [];
+
+function useItem(x,y,z,i,b,s,id,bs) {
+    
+}
