@@ -400,7 +400,13 @@ var registerBlocks = function() {
     var gearbox = new createBlock(Blocks.Machinery.Gearbox,"Gearbox",[["gearbox",0]],5,0,0,1,1,0,true,0);
     
     var woodBarrel = new createBlock(Blocks.Barrels.Normal,"Wooden Barrel",[["barrel",2],["barrel",1],["barrel",0],["barrel",0],["barrel",0],["barrel",0]],5,0,0,1,1,0,true,0);
+    Block.setShape(Blocks.Barrels.Normal,1/16,0.125/16,1/16,15/16,16/16,15/16,0);
     var barrelFill = new createBlock(Blocks.Barrels.Fill,"Barrel Fill",[["still_water",0]],5,0,0,1,1,0,false,0);
+    Block.setShape(Blocks.Barrels.Fill,1.5/16,1/16,1.5/16,13.5/16,4/16,14.5/16,0);
+    Block.setShape(Blocks.Barrels.Fill,1.5/16,1/16,1.5/16,13.5/16,7/16,14.5/16,1);
+    Block.setShape(Blocks.Barrels.Fill,1.5/16,1/16,1.5/16,13.5/16,10/16,14.5/16,2);
+    Block.setShape(Blocks.Barrels.Fill,1.5/16,1/16,1.5/16,13.5/16,13/16,14.5/16,3);
+    Block.setShape(Blocks.Barrels.Fill,1.5/16,1/16,1.5/16,13.5/16,16/16,14.5/16,4);
 };
 
 registerItems();
