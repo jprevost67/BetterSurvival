@@ -24,3 +24,6 @@ Solid Concrete - 225
 Tin Ore - 226
 
 Gearbox - 227
+
+Barrel - 228
+Barrel Filling - 229
