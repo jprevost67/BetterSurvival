@@ -288,11 +288,14 @@ var registerBlocks = function() {
     var cobbleCompressedTriple = new createBlock(Blocks.Cobble_Compressed.Triple,"Triple Compressed Cobblestone",[["cobble_compressed_triple",0]],2,0,0,1,1,0,true,0);
     var cobbleCompressedQuadruple = new createBlock(Blocks.Cobble_Compressed.Quadruple,"Quadruple Compressed Cobblestone",[["cobble_compressed_quadruple",0]],2,0,0,1,1,0,true,0);
     
-    var concreteWet = new createBlock(Blocks.Concrete.Wet,"Concrete (Liquid)",[["concrete",0]],1,0,0,9999,9999,0,true,0);
+    var concreteWet = new createBlock(Blocks.Concrete.Wet,"Concrete (Liquid)",[["concrete",0]],1,0,0,9999,9999,0,false,0);
     var concreteDry = new createBlock(Blocks.Concrete.Dry,"Concrte",[["concrete",0]],1,0,0,1.5,2,0,true,0);
     
     var tinOre = new createBlock(Blocks.Ore.Tin,"Tin Ore",[["ore_tin",0]],1,0,0,1.5,2,0,true,0);
     
     var gearbox = new createBlock(Blocks.Machinery.Gearbox,"Gearbox",[["gearbox",0]],5,0,0,1,1,0,true,0);
+    
+    var woodBarrel = new createBlock(Blocks.Barrels.Normal,"Wooden Barrel",[["barrel",2],["barrel",1],["barrel",0],["barrel",0],["barrel",0],["barrel",0]],5,0,0,1,1,0,true,0);
+    var barrelFill = new createBlock(Blocks.Barrels.Fill,"Barrel Fill",[["still_water",0]],5,0,0,1,1,0,false,0);
     
 };
