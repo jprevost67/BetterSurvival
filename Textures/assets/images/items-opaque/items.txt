@@ -1,32 +1,33 @@
 Crushed Coal - 450
 Crushed Iron - 451
-Crushed Gold - 452
+Crushed Iron - 452
+Crushed Gold - 453
 
-Wood Knife - 453
-Stone Knife - 454
-Iron Knife - 455
-Gold Knife - 456
-Diamond Knife - 457
+Wood Knife - 454
+Stone Knife - 455
+Iron Knife - 456
+Gold Knife - 457
+Diamond Knife - 458
 
-Wood Hammer - 458
-Stone Hammer - 459
-Iron Hammer - 460
-Gold Hammer - 461
-Diamond Hammer - 462
+Wood Hammer - 459
+Stone Hammer - 460
+Iron Hammer - 461
+Gold Hammer - 462
+Diamond Hammer - 463
 
-Wood Gear - 463
-Stone Gear - 464
-Iron Gear - 465
+Wood Gear - 464
+Stone Gear - 465
+Iron Gear - 466
 
-Iron Wrench - 466
+Iron Wrench - 467
 
-Concrete Bucket - 467
+Concrete Bucket - 468
 
-Tin Ingot - 468
+Tin Ingot - 469
 
-Iron Nugget - 469
-Tin Nugget - 470
+Iron Nugget - 470
+Tin Nugget - 471
 
-Rock - 471
+Rock - 472
 
-Silk Strand - 472
+Silk Strand - 473
