@@ -28,17 +28,36 @@ Version:    |                                                 Changelog:
             |  -Rock
             |  -Silk Strand
             | -Blocks
-            |  -
+            |  -Apple Tree Log
+            |  -Orange Tree Log
+            |  -Apple Tree Leaves
+            |  -Orange Tree Leaves
+            |  -Apple Tree Sapling
+            |  -Orange Tree Sapling
+            |  -Apple Tree Planks
+            |  -Orange Tree Planks
+            |  -Apple Tree Slabs
+            |  -Orange Tree Slabs
+            |  -Single Compressed Cobble
+            |  -Double Compressed Cobble
+            |  -Triple Compressed Cobble
+            |  -Quadruple Compressed Cobble
+            |  -Concrete Liquid
+            |  -Concrete Block
+            |  -Tin Ore
+            |  -Gear Box
+            |  -Wooden Barrel
+            |  -tile.barrel.name
             | -Entities
-            |  -
+            |  -None
+            | -Generated Structures
+            |  -Apple Tree
+            |  -Orange Tree
+            |  -Tin Ore
             | Changes:
-            | 
-            | 
+            |  -None
             | Bug Fixes:
-            | 
-            | 
+            |  -None
             | Known Bugs:
-            | 
-            | 
-            | 
-            | 
+            |  -None
+-------------------------------------------------------------------------------------------------------------------------------
