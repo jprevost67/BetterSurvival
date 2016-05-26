@@ -288,9 +288,11 @@ var registerBlocks = function() {
     var cobbleCompressedTriple = new createBlock(Blocks.Cobble_Compressed.Triple,"Triple Compressed Cobblestone",[["cobble_compressed_triple",0]],2,0,0,1,1,0,true,0);
     var cobbleCompressedQuadruple = new createBlock(Blocks.Cobble_Compressed.Quadruple,"Quadruple Compressed Cobblestone",[["cobble_compressed_quadruple",0]],2,0,0,1,1,0,true,0);
     
-    var cobbleCompressedSingle = new createBlock(Blocks.Cobble_Compressed.Single,"Single Compressed Cobblestone",[["concrete",0]],2,0,0,9999,9999,0,true,0);
-    var cobbleCompressedDouble = new createBlock(Blocks.Cobble_Compressed.Double,"Double Compressed Cobblestone",[["concrete",0]],2,0,0,1.5,2,0,true,0);
+    var concreteWet = new createBlock(Blocks.Concrete.Wet,"Concrete (Liquid)",[["concrete",0]],1,0,0,9999,9999,0,true,0);
+    var concreteDry = new createBlock(Blocks.Concrete.Dry,"Concrte",[["concrete",0]],1,0,0,1.5,2,0,true,0);
     
+    var tinOre = new createBlock(Blocks.Ore.Tin,"Tin Ore",[["ore_tin",0]],1,0,0,1.5,2,0,true,0);
     
+    var gearbox = new createBlock(Blocks.Machinery.Gearbox,"Gearbox",[["gearbox",0]],5,0,0,1,1,0,true,0);
     
 };
