@@ -1,16 +1,44 @@
 Version:    |                                                 Changelog:
-------------|----------------------------------------------------------------------------------------------------------------------
+------------|--------------------------------------------------------------------------------------------------------------------
+  1.0.0.0b  |
             | Aditions:
-            |
-            |
-  1.0.0.0b  | Changelog:
-            |
-            |
+            | -Items
+            |  -Crushed Coal
+            |  -Crushed Iron
+            |  -Crushed Tin
+            |  -Crushed Gold
+            |  -Wooden Knife
+            |  -Stone Knife
+            |  -Iron Knife
+            |  -Gold Knife
+            |  -Diamond Knife
+            |  -Wooden Hammer
+            |  -Stone Hammer
+            |  -Iron Hammer
+            |  -Gold Hammer
+            |  -Diamond Hammer
+            |  -Wooden Gear
+            |  -Stone Gear
+            |  -Iron Gear
+            |  -Wrench
+            |  -Concrete Bucket
+            |  -Tin Ingot
+            |  -Iron Nugget
+            |  -Tin Nugget
+            |  -Rock
+            |  -Silk Strand
+            | -Blocks
+            |  -
+            | -Entities
+            |  -
+            | Changes:
+            | 
+            | 
             | Bug Fixes:
-            |
-            |
+            | 
+            | 
             | Known Bugs:
-            |
-            |
-            |
-            |
+            | 
+            | 
+            | 
+            | 
