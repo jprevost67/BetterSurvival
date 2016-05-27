@@ -1,8 +1,11 @@
-addItemInventory(par1int, par2int, par3int);
-bl_setMobSkin(par1Object, par2String);
-bl_spawnMob(par1double, par2double, par3double, par4int, par5String);
-clientMessage(par1String);
-explode(par1double, par2double, par3double, par4double, par5boolean);
+Function Name:              |Parameters:
+----------------------------|-------------------------------------------------------------------------------------------------
+addItemInventory            |(id, amount, data);
+----------------------------|-------------------------------------------------------------------------------------------------
+clientMessage               |(message);
+----------------------------|-------------------------------------------------------------------------------------------------
+explode                     |(x, y, z, size, fire);
+----------------------------|-------------------------------------------------------------------------------------------------
 getCarriedItem();
 getLevel();
 getPitch(par1Object);
