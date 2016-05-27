@@ -365,7 +365,7 @@ var registerItems = function(){
     
     var wrench = new createItem(Items.Wrenches.Normal,"Wrench","wrench",0,1,true,true);
     
-    var concreteBucket = new createItem(Items.Buckets.Concrete,"Concrete Bucket","bucket_Concrete",0,1,false,true);
+    var concreteBucket = new createItem(Items.Buckets.Concrete,"Concrete Bucket","bucket_concrete",0,1,false,true);
     
     var ingotTin = new createItem(Items.Ingots.Tin,"Tin Ingot","ingot_tin",0,64,false,true);
     
