@@ -410,8 +410,8 @@ var registerBlocks = function() {
     var concreteWet = new createBlock(Blocks.Concrete.Wet,"Concrete (Liquid)",[["concrete",0]],1,0,0,9999,9999,0,false,0);
     var concreteDry = new createBlock(Blocks.Concrete.Dry,"Concrte",[["concrete",0]],1,0,0,1.5,2,0,true,0);
     
-    var copperOre = new createBlock(Blocks.Ore.Copper,"Copper Ore",[["ore_tin",0]],1,0,0,1.5,2,0,true,0);
-    var tinOre = new createBlock(Blocks.Ore.Tin,"Tin Ore",[["ore_tin",0]],1,0,0,1.5,2,0,true,0);
+    var copperOre = new createBlock(Blocks.Ores.Copper,"Copper Ore",[["ore_tin",0]],1,0,0,1.5,2,0,true,0);
+    var tinOre = new createBlock(Blocks.Ores.Tin,"Tin Ore",[["ore_tin",0]],1,0,0,1.5,2,0,true,0);
     
     var gearbox = new createBlock(Blocks.Machinery.Gearbox,"Gearbox",[["gearbox",0]],5,0,0,1,1,0,true,0);
     
