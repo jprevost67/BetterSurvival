@@ -380,8 +380,8 @@ var registerItems = function(){
 };
 
 var registerBlocks = function() {
-    var appleLog = new createBlock(Blocks.Logs.Apple,"Apple Tree Log",[["log_apple",4],["log_apple",4],["log_apple",1],["log_apple",1],["log_apple",1],["log_apple",1]],5,0,0,0.5,1,0,true,0);
-    //var orangeLog = new createBlock(Blocks.Logs.Orange,"Orange Tree Log",[["log_orange",4],["log_orange",4],["log_orange",1],["log_orange",1],["log_orange",1],["log_orange",1]],5,0,0,0.5,1,0,true,0);
+    var appleLog = new createBlock(Blocks.Logs.Apple,"Apple Tree Log",[["log_apple",4],["log_apple",4],["log_apple",0],["log_apple",0],["log_apple",0],["log_apple",0]],5,0,0,0.5,1,0,true,0);
+    //var orangeLog = new createBlock(Blocks.Logs.Orange,"Orange Tree Log",[["log_orange",4],["log_orange",4],["log_orange",0],["log_orange",0],["log_orange",0],["log_orange",0]],5,0,0,0.5,1,0,true,0);
     
     var appleLeaves = new createBlock(Blocks.Leaves.Apple,"Apple Tree Leaves",[["leaves_apple",0]],1,0,0,0.1,0.5,0,true,0);
     //var orangeLeaves = new createBlock(Blocks.Leaves.Orange,"Orange Tree Leaves",[["leaves_orange",0]],1,0,0,0.1,0.5,0,true,0);
