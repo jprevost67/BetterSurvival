@@ -2,27 +2,24 @@ var Items = {
     Crushed: {
         Coal: 500,
         Iron: 501,
-        Copper: 502,
-        Tin: 503,
-        Gold: 504,
+        Tin: 502,
+        Gold: 50403,
     },
     Knives: {
         Wood: 510,
         Stone: 511,
         Iron: 512,
-        Copper: 513,
-        Tin: 514,
-        Gold: 515,
-        Diamond: 516,
+        Tin: 513,
+        Gold: 514,
+        Diamond: 515,
     },
     Hammers: {
         Wood: 520,
         Stone: 521,
         Iron: 522,
-        Copper: 523,
-        Tin: 524,
-        Gold: 525,
-        Diamond: 526,
+        Tin: 523,
+        Gold: 524,
+        Diamond: 525,
     },
     Gears: {
         Wood: 530,
@@ -37,13 +34,11 @@ var Items = {
         Concrete: 550,
     },
     Ingots: {
-        Copper: 560,
-        Tin: 561,
+        Tin: 560,
     },
     Nuggets: {
         Iron: 570,
-        Copper: 571,
-        Tin: 572,
+        Tin: 571,
     },
     Misc: {
         Rock: 580,
@@ -82,15 +77,14 @@ var Blocks = {
         Dry: 225,
     },
     Ores: {
-        Copper: 226,
-        Tin: 227,
+        Tin: 226,
     },
     Machinery: {
-        Gearbox: 228,
+        Gearbox: 227,
     },
     Barrels: {
-        Normal: 229,
-        Fill: 230,
+        Normal: 228,
+        Fill: 229,
     },
 };
 
@@ -236,8 +230,8 @@ var BarrelFunction = function(x,y,z) {
     this.x = x;
     this.y = y;
     this.z = z;
-    this.id = 229;
-    this.fillId = 230;
+    this.id = Blocks.Barrels.Normal;
+    this.fillId = Blocks.Barrels.Fill;
     this.filledPercent = 0;
     this.state = "empty";
     this.isRaining = false;
@@ -338,14 +332,12 @@ var generateOre = function(id,minY,maxY,rarity){
 var registerItems = function(){
     var crushedCoal = new createItem(Items.Crushed.Coal,"Crushed Coal","crushed_coal",0,64,false,true);
     var crushedIron = new createItem(Items.Crushed.Iron,"Crushed Iron","crushed_iron",0,64,false,true);
-    //var crushedCopper = new createItem(Items.Crushed.Copper,"Crushed Copper","crushed_copper",0,64,false,true);
     var crushedTin = new createItem(Items.Crushed.Tin,"Crushed Tin","crushed_tin",0,64,false,true);
     var crushedGold = new createItem(Items.Crushed.Gold,"Crushed Gold","crushed_gold",0,64,false,true);
     
     var knifeWood = new createItem(Items.Knives.Wood,"Wooden Knife","knife_wood",0,1,true,true);
     var knifeStone = new createItem(Items.Knives.Stone,"Stone Knife","knife_stone",0,1,true,true);
     var knifeIron = new createItem(Items.Knives.Iron,"Iron Knife","knife_iron",0,1,true,true);
-    //var knifeCopper = new createItem(Items.Knives.Copper,"Copper Knife","knife_copper",0,1,true,true);
     var knifeTin = new createItem(Items.Knives.Tin,"Tin Knife","knife_tin",0,1,true,true);
     var knifeGold = new createItem(Items.Knives.Gold,"Gold Knife","knife_gold",0,1,true,true);
     var knifeDiamond = new createItem(Items.Knives.Diamond,"Diamond Knife","knife_diamond",0,1,true,true);
@@ -353,7 +345,6 @@ var registerItems = function(){
     var hammerWood = new createItem(Items.Hammers.Wood,"Wooden Hammer","hammer_wood",0,1,true,true);
     var hammerStone = new createItem(Items.Hammers.Stone,"Stone Hammer","hammer_stone",0,1,true,true);
     var hammerIron = new createItem(Items.Hammers.Iron,"Iron Hammer","hammer_iron",0,1,true,true);
-    //var hammerCopper = new createItem(Items.Hammers.Copper,"Copper Hammer","hammer_copper",0,1,true,true);
     var hammerTin = new createItem(Items.Hammers.Tin,"Tin Hammer","hammer_tin",0,1,true,true);
     var hammerGold = new createItem(Items.Hammers.Gold,"Gold Hammer","hammer_gold",0,1,true,true);
     var hammerDiamond = new createItem(Items.Hammers.Diamond,"Diamond Hammer","hammer_diamond",0,1,true,true);
@@ -367,11 +358,9 @@ var registerItems = function(){
     
     var concreteBucket = new createItem(Items.Buckets.Concrete,"Concrete Bucket","bucket_concrete",0,1,false,true);
     
-	//var ingotCopper = new createItem(Items.Ingots.Copper,"Copper Ingot","ingot_copper",0,64,false,true);
-    var ingotTin = new createItem(Items.Ingots.Tin,"Tin Ingot","ingot_tin",0,64,false,true);
+	var ingotTin = new createItem(Items.Ingots.Tin,"Tin Ingot","ingot_tin",0,64,false,true);
     
     var nuggetIron = new createItem(Items.Nuggets.Iron,"Iron Nugget","nugget_iron",0,64,false,true);
-    //var nuggetCopper = new createItem(Items.Nuggets.Copper,"Copper Nugget","nugget_copper",0,64,false,true);
     var nuggetTin = new createItem(Items.Nuggets.Tin,"Tin Nugget","nugget_tin",0,64,false,true);
     
     var rock = new createItem(Items.Misc.Rock,"Rock","rock",0,64,false,true);
@@ -381,27 +370,27 @@ var registerItems = function(){
 
 var registerBlocks = function() {
     var appleLog = new createBlock(Blocks.Logs.Apple,"Apple Tree Log",[["log_apple",4],["log_apple",4],["log_apple",0],["log_apple",0],["log_apple",0],["log_apple",0]],5,0,0,0.5,1,0,true,0);
-    //var orangeLog = new createBlock(Blocks.Logs.Orange,"Orange Tree Log",[["log_orange",4],["log_orange",4],["log_orange",0],["log_orange",0],["log_orange",0],["log_orange",0]],5,0,0,0.5,1,0,true,0);
+    var orangeLog = new createBlock(Blocks.Logs.Orange,"Orange Tree Log",[["log_orange",4],["log_orange",4],["log_orange",0],["log_orange",0],["log_orange",0],["log_orange",0]],5,0,0,0.5,1,0,true,0);
     
     var appleLeaves = new createBlock(Blocks.Leaves.Apple,"Apple Tree Leaves",[["leaves_apple",0]],1,0,0,0.1,0.5,0,true,0);
-    //var orangeLeaves = new createBlock(Blocks.Leaves.Orange,"Orange Tree Leaves",[["leaves_orange",0]],1,0,0,0.1,0.5,0,true,0);
+    var orangeLeaves = new createBlock(Blocks.Leaves.Orange,"Orange Tree Leaves",[["leaves_orange",0]],1,0,0,0.1,0.5,0,true,0);
     
     var appleSapling = new createBlock(Blocks.Saplings.Apple,"Apple Tree Sapling",[["leaves_apple",0]],1,0,0,0.1,0.5,0,false,0);
     Block.setShape(Blocks.Saplings.Apple,4/16,0,4/16,12/16,6/16,12/16);
-    //var orangeSapling = new createBlock(Blocks.Saplings.Orange,"Orange Tree Sapling",[["leaves_orange",0]],1,0,0,0.1,0.5,0,false,0);
-    //Block.setShape(Blocks.Saplings.Orange,4/16,0,4/16,12/16,6/16,12/16);
+    var orangeSapling = new createBlock(Blocks.Saplings.Orange,"Orange Tree Sapling",[["leaves_orange",0]],1,0,0,0.1,0.5,0,false,0);
+    Block.setShape(Blocks.Saplings.Orange,4/16,0,4/16,12/16,6/16,12/16);
     
     var applePlanks = new createBlock(Blocks.Planks.Apple,"Apple Tree Planks",[["planks_apple",0]],5,0,0,0.5,1,0,true,0);
-    //var orangePlanks = new createBlock(Blocks.Planks.Orange,"Orange Tree Planks",[["planks_orange",0]],5,0,0,0.5,1,0,true,0);
+    var orangePlanks = new createBlock(Blocks.Planks.Orange,"Orange Tree Planks",[["planks_orange",0]],5,0,0,0.5,1,0,true,0);
     
     var appleSlabs = new createBlock(Blocks.Slabs.Apple,"Apple Tree Slabs",[["planks_apple",0]],5,0,0,0.5,1,0,true,0);
     Block.setShape(Blocks.Slabs.Apple,0,0,0,1,0.5,1,0);
     Block.setShape(Blocks.Slabs.Apple,0,0.5,0,1,1,1,1);
     Block.setShape(Blocks.Slabs.Apple,0,0,0,1,1,1,2);
-    //var orangeSlabs = new createBlock(Blocks.Slabs.Orange,"Orange Tree Slabs",[["planks_orange",0]],5,0,0,0.5,1,0,true,0);
-    //Block.setShape(Blocks.Slabs.Orange,0,0,0,1,0.5,1,0);
-    //Block.setshape(Blocks.Slabs.Orange,0,0.5,0,1,1,1,1);
-    //Block.setshape(Blocks.Slabs.Orange,0,0,0,1,1,1,2);
+    var orangeSlabs = new createBlock(Blocks.Slabs.Orange,"Orange Tree Slabs",[["planks_orange",0]],5,0,0,0.5,1,0,true,0);
+    Block.setShape(Blocks.Slabs.Orange,0,0,0,1,0.5,1,0);
+    Block.setshape(Blocks.Slabs.Orange,0,0.5,0,1,1,1,1);
+    Block.setshape(Blocks.Slabs.Orange,0,0,0,1,1,1,2);
     
     var cobbleCompressedSingle = new createBlock(Blocks.Cobble_Compressed.Single,"Single Compressed Cobblestone",[["cobble_compressed",0]],2,0,0,1,1,0,true,0);
     var cobbleCompressedDouble = new createBlock(Blocks.Cobble_Compressed.Double,"Double Compressed Cobblestone",[["cobble_compressed",1]],2,0,0,1,1,0,true,0);
@@ -411,7 +400,6 @@ var registerBlocks = function() {
     var concreteWet = new createBlock(Blocks.Concrete.Wet,"Concrete (Liquid)",[["concrete",0]],1,0,0,9999,9999,0,false,0);
     var concreteDry = new createBlock(Blocks.Concrete.Dry,"Concrte",[["concrete",0]],1,0,0,1.5,2,0,true,0);
     
-    //var copperOre = new createBlock(Blocks.Ores.Copper,"Copper Ore",[["ore_tin",0]],1,0,0,1.5,2,0,true,0);
     var tinOre = new createBlock(Blocks.Ores.Tin,"Tin Ore",[["ore_tin",0]],1,0,0,1.5,2,0,true,0);
     
     var gearbox = new createBlock(Blocks.Machinery.Gearbox,"Gearbox",[["gearbox",0]],5,0,0,1,1,0,true,0);
