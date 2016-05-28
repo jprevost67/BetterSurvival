@@ -3,7 +3,7 @@ var Items = {
         Coal: 500,
         Iron: 501,
         Tin: 502,
-        Gold: 50403,
+        Gold: 503,
     },
     Knives: {
         Wood: 510,
@@ -43,6 +43,7 @@ var Items = {
     Misc: {
         Rock: 580,
         Silk_Strand: 581,
+		Orange: 582,
     },
 };
 var Blocks = {
@@ -146,9 +147,15 @@ var createBlock = function(id,name,texture,source,isOpaque,render,destroy,explos
     }
 };
 
-var createItem = function(id,name,texture,source,stackSize,isTool,addCreative) {
-    ModPE.setItem(id,texture,source,name,stackSize);
-    Item.setHandEquipped(id,isTool);
+var createItem = function(id,name,texture,source,stackSize,isTool,addCreative,isFood,saturation) {
+    if(isFood == false){
+		ModPE.setItem(id,texture,source,name,stackSize);
+    	Item.setHandEquipped(id,isTool);
+	}
+	else if(isFood == true){
+		ModPE.setFoodItem(id,texture,source,saturation,name,stackSize);
+    	Item.setHandEquipped(id,isTool);
+	}
     if(addCreative == true){
         Player.addItemCreativeInv(id,1,0);
     }
@@ -288,32 +295,33 @@ var BarrelFunction = function(x,y,z) {
 var generateOre = function(id,minY,maxY,rarity){
     this.r = Math.floor(Math.random()*rarity);
     this.maxSpawn = 10000/rarity;
-    this.rX = Math.floor(Math.random()*100000);
+    this.rX = Player.getX() + Math.floor((Math.random()*200)-100);
     this.rY = Math.floor((Math.random()*maxY)+minY);
-    this.rZ = Math.floor(Math.random()*100000);
+    this.rZ = Player.getZ() + Math.floor((Math.random()*100)-100);
     this.gen = function(){
-        if(level.getTile(rX,rY,rZ) == 0){
-            setTile(rX,rY,rZ,id);
-            if(level.getTile(rX,rY+1,rZ) == 0){
-                setTile(rX,rY+1,rZ,id);
+        if(Level.getTile(this.rX,this.rY,this.rZ) == 0){
+			print("spawned");
+            setTile(this.rX,this.rY,this.rZ,this.id);
+            if(Level.getTile(this.rX,this.rY+1,this.rZ) == 0){
+                setTile(this.rX,this.rY+1,this.rZ,this.id);
             }
-            if(level.getTile(rX+1,rY,rZ) == 0){
-                setTile(rX+1,rY,rZ,id);
+            if(Level.getTile(this.rX+1,this.rY,this.rZ) == 0){
+                setTile(this.rX+1,this.rY,this.rZ,this.id);
             }
-            if(level.getTile(rX,rY,rZ+1) == 0){
-                setTile(rX,rY,rZ+1,id);
+            if(Level.getTile(this.rX,this.rY,this.rZ+1) == 0){
+                setTile(this.rX,this.rY,this.rZ+1,this.id);
             }
-            if(level.getTile(rX+1,rY,rZ+1) == 0){
-                setTile(rX+1,rY,rZ+1,id);
+            if(Level.getTile(this.rX+1,this.rY,this.rZ+1) == 0){
+                setTile(this.rX+1,this.rY,this.rZ+1,this.id);
             }
-            if(level.getTile(rX+1,rY+1,rZ) == 0){
-                setTile(rX+1,rY+1,rZ,id);
+            if(Level.getTile(this.rX+1,this.rY+1,this.rZ) == 0){
+                setTile(this.rX+1,this.rY+1,this.rZ,this.id);
             }
-            if(level.getTile(rX,rY+1,rZ+1) == 0){
-                setTile(rX,rY+1,rZ+1,id);
+            if(Level.getTile(this.rX,this.rY+1,this.rZ+1) == 0){
+                setTile(this.rX,this.rY+1,this.rZ+1,this.id);
             }
-            if(level.getTile(rX+1,rY+1,rZ+1) == 0){
-                setTile(rX+1,rY+1,rZ+1,id);
+            if(Level.getTile(this.rX+1,this.rY+1,this.rZ+1) == 0){
+                setTile(this.rX+1,this.rY+1,this.rZ+1,this.id);
             }
         }
     };
@@ -330,42 +338,44 @@ var generateOre = function(id,minY,maxY,rarity){
 }
 
 var registerItems = function(){
-    var crushedCoal = new createItem(Items.Crushed.Coal,"Crushed Coal","crushed_coal",0,64,false,true);
-    var crushedIron = new createItem(Items.Crushed.Iron,"Crushed Iron","crushed_iron",0,64,false,true);
-    var crushedTin = new createItem(Items.Crushed.Tin,"Crushed Tin","crushed_tin",0,64,false,true);
-    var crushedGold = new createItem(Items.Crushed.Gold,"Crushed Gold","crushed_gold",0,64,false,true);
+    var crushedCoal = new createItem(Items.Crushed.Coal,"Crushed Coal","crushed_coal",0,64,false,true,false,0);
+    var crushedIron = new createItem(Items.Crushed.Iron,"Crushed Iron","crushed_iron",0,64,false,true,false,0);
+    var crushedTin = new createItem(Items.Crushed.Tin,"Crushed Tin","crushed_tin",0,64,false,true,false,0);
+    var crushedGold = new createItem(Items.Crushed.Gold,"Crushed Gold","crushed_gold",0,64,false,true,false,0);
     
-    var knifeWood = new createItem(Items.Knives.Wood,"Wooden Knife","knife_wood",0,1,true,true);
-    var knifeStone = new createItem(Items.Knives.Stone,"Stone Knife","knife_stone",0,1,true,true);
-    var knifeIron = new createItem(Items.Knives.Iron,"Iron Knife","knife_iron",0,1,true,true);
-    var knifeTin = new createItem(Items.Knives.Tin,"Tin Knife","knife_tin",0,1,true,true);
-    var knifeGold = new createItem(Items.Knives.Gold,"Gold Knife","knife_gold",0,1,true,true);
-    var knifeDiamond = new createItem(Items.Knives.Diamond,"Diamond Knife","knife_diamond",0,1,true,true);
+    var knifeWood = new createItem(Items.Knives.Wood,"Wooden Knife","knife_wood",0,1,true,true,false,0);
+    var knifeStone = new createItem(Items.Knives.Stone,"Stone Knife","knife_stone",0,1,true,true,false,0);
+    var knifeIron = new createItem(Items.Knives.Iron,"Iron Knife","knife_iron",0,1,true,true,false,0);
+    var knifeTin = new createItem(Items.Knives.Tin,"Tin Knife","knife_tin",0,1,true,true,false,0);
+    var knifeGold = new createItem(Items.Knives.Gold,"Gold Knife","knife_gold",0,1,true,true,false,0);
+    var knifeDiamond = new createItem(Items.Knives.Diamond,"Diamond Knife","knife_diamond",0,1,true,true,false,0);
     
-    var hammerWood = new createItem(Items.Hammers.Wood,"Wooden Hammer","hammer_wood",0,1,true,true);
-    var hammerStone = new createItem(Items.Hammers.Stone,"Stone Hammer","hammer_stone",0,1,true,true);
-    var hammerIron = new createItem(Items.Hammers.Iron,"Iron Hammer","hammer_iron",0,1,true,true);
-    var hammerTin = new createItem(Items.Hammers.Tin,"Tin Hammer","hammer_tin",0,1,true,true);
-    var hammerGold = new createItem(Items.Hammers.Gold,"Gold Hammer","hammer_gold",0,1,true,true);
-    var hammerDiamond = new createItem(Items.Hammers.Diamond,"Diamond Hammer","hammer_diamond",0,1,true,true);
+    var hammerWood = new createItem(Items.Hammers.Wood,"Wooden Hammer","hammer_wood",0,1,true,true,false,0);
+    var hammerStone = new createItem(Items.Hammers.Stone,"Stone Hammer","hammer_stone",0,1,true,true,false,0);
+    var hammerIron = new createItem(Items.Hammers.Iron,"Iron Hammer","hammer_iron",0,1,true,true,false,0);
+    var hammerTin = new createItem(Items.Hammers.Tin,"Tin Hammer","hammer_tin",0,1,true,true,false,0);
+    var hammerGold = new createItem(Items.Hammers.Gold,"Gold Hammer","hammer_gold",0,1,true,true,false,0);
+    var hammerDiamond = new createItem(Items.Hammers.Diamond,"Diamond Hammer","hammer_diamond",0,1,true,true,false,0);
     
-    var gearWood = new createItem(Items.Gears.Wood,"Wooden Gear","gear_wood",0,64,true,true);
-    var gearStone = new createItem(Items.Gears.Stone,"Stone Gear","gear_stone",0,64,true,true);
-    var gearIron = new createItem(Items.Gears.Iron,"Iron Gear","gear_iron",0,64,true,true);
-    var gearTin = new createItem(Items.Gears.Tin,"Tin Gear","gear_tin",0,64,true,true);
+    var gearWood = new createItem(Items.Gears.Wood,"Wooden Gear","gear_wood",0,64,true,true,false,0);
+    var gearStone = new createItem(Items.Gears.Stone,"Stone Gear","gear_stone",0,64,true,true,false,0);
+    var gearIron = new createItem(Items.Gears.Iron,"Iron Gear","gear_iron",0,64,true,true,false,0);
+    var gearTin = new createItem(Items.Gears.Tin,"Tin Gear","gear_tin",0,64,true,true,false,0);
     
-    var wrench = new createItem(Items.Wrenches.Normal,"Wrench","wrench",0,1,true,true);
+    var wrench = new createItem(Items.Wrenches.Normal,"Wrench","wrench",0,1,true,true,false,0);
     
-    var concreteBucket = new createItem(Items.Buckets.Concrete,"Concrete Bucket","bucket_concrete",0,1,false,true);
+    var concreteBucket = new createItem(Items.Buckets.Concrete,"Concrete Bucket","bucket_concrete",0,1,false,true,false,0);
     
-	var ingotTin = new createItem(Items.Ingots.Tin,"Tin Ingot","ingot_tin",0,64,false,true);
+	var ingotTin = new createItem(Items.Ingots.Tin,"Tin Ingot","ingot_tin",0,64,false,true,false,0);
     
-    var nuggetIron = new createItem(Items.Nuggets.Iron,"Iron Nugget","nugget_iron",0,64,false,true);
-    var nuggetTin = new createItem(Items.Nuggets.Tin,"Tin Nugget","nugget_tin",0,64,false,true);
+    var nuggetIron = new createItem(Items.Nuggets.Iron,"Iron Nugget","nugget_iron",0,64,false,true,false,0);
+    var nuggetTin = new createItem(Items.Nuggets.Tin,"Tin Nugget","nugget_tin",0,64,false,true,false,0);
     
-    var rock = new createItem(Items.Misc.Rock,"Rock","rock",0,64,false,true);
+    var rock = new createItem(Items.Misc.Rock,"Rock","rock",0,64,false,true,false,0);
     
-    var silkStrand = new createItem(Items.Misc.Silk_Strand,"Silk Strand","silk_strand",0,64,false,true);
+    var silkStrand = new createItem(Items.Misc.Silk_Strand,"Silk Strand","silk_strand",0,64,false,true,false,0);
+	
+	var orange = new createItem(Items.Misc.Orange,"Orange","orange",0,64,false,true,true,5);
 };
 
 var registerBlocks = function() {
@@ -389,8 +399,8 @@ var registerBlocks = function() {
     Block.setShape(Blocks.Slabs.Apple,0,0,0,1,1,1,2);
     var orangeSlabs = new createBlock(Blocks.Slabs.Orange,"Orange Tree Slabs",[["planks_orange",0]],5,0,0,0.5,1,0,true,0);
     Block.setShape(Blocks.Slabs.Orange,0,0,0,1,0.5,1,0);
-    Block.setshape(Blocks.Slabs.Orange,0,0.5,0,1,1,1,1);
-    Block.setshape(Blocks.Slabs.Orange,0,0,0,1,1,1,2);
+    Block.setShape(Blocks.Slabs.Orange,0,0.5,0,1,1,1,1);
+    Block.setShape(Blocks.Slabs.Orange,0,0,0,1,1,1,2);
     
     var cobbleCompressedSingle = new createBlock(Blocks.Cobble_Compressed.Single,"Single Compressed Cobblestone",[["cobble_compressed",0]],2,0,0,1,1,0,true,0);
     var cobbleCompressedDouble = new createBlock(Blocks.Cobble_Compressed.Double,"Double Compressed Cobblestone",[["cobble_compressed",1]],2,0,0,1,1,0,true,0);
@@ -420,6 +430,12 @@ registerBlocks();
 var appleTrees = [];
 var orangeTrees = [];
 
+var tinOreGen = new generateOre(Blocks.Ores.Tin,10,60,5);
+
 function useItem(x,y,z,i,b,s,id,bs) {
     
+}
+
+function modTick() {
+	tinOreGen.run();
 }
